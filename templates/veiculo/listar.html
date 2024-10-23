@@ -1,0 +1,17 @@
+{% extends "../base.html" %}
+{% block content %}
+{% load static %}
+Listando o(s) {{veiculos|length}} veículo(s):
+{% for veiculo in veiculos %}
+<div id="card_{{veiculo.id}}" style="margin-bottom:4vh">
+	<img src="{{veiculo.foto.url}}"></img><br>
+	Modelo: {{veiculo.modelo}} -- 
+	Marca: {{veiculo.get_marca_display}} -- 
+	Ano: {{veiculo.ano}} -- 
+	Cor: {{veiculo.get_cor_display}} -- 
+	Combustivel: {{veiculo.get_combustivel_display}}
+	<a href="/veiculo/{{veiculo.id}}"><button>Editar</button></a>
+	<hr>
+</div>
+{% endfor %}
+{% endblock %}

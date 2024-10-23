@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<style>
+			body {
+				color: lime;
+				font-family: "Lucida Console", "Courier New", monospace;
+				font-size: 20px;
+			}
+			input {
+				width: 20%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: 1px solid lime;
+				outline: none;
+				background-color: black;
+				color: lime;
+				font-size: 20px;
+				}
+				
+			input:focus {
+				border: 1px solid blue;
+			}
+		</style>
+	<head>
+	<body>
+		<form action="/" method="POST">
+			{% csrf_token %}
+			<label for="nome">Nome</label><br>
+			<input type="text" id="nome" name="nome"><br>
+			<label for="senha">Senha</label><br>
+			<input type="password" id="senha" name="senha"><br>
+			<input type="submit" value="Submit"><br>
+		</form>
+
+		{% if mensagem %}
+		{{ mensagem }}
+		{% endif %}
+	<body>
+</html>

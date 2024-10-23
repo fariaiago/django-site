@@ -1,0 +1,25 @@
+{% extends "../base.html" %}
+{% block content %}
+{% load static %}
+<div>
+	<form method="post" action="/veiculo/{{object.pk}}/" enctype="multipart/form-data">
+		{% csrf_token %}
+		<label for="marca">Marca:</label>
+		{{ form.marca }}<br>
+		<label for="modelo">Modelo:</label>
+		{{ form.modelo }}<br>
+		<label for="ano">Ano:</label>
+		{{ form.ano }}<br>
+		<label for="cor">Cor:</label>
+		{{ form.cor }}<br>
+		<label for="combustivel">Combustivel:</label>
+		{{ form.combustivel }}<br>
+		<label for="foto">Foto</label>
+		<label class="input-file">
+			{{ form.foto }}
+			Upload
+		</label><br>
+		<button type="submit">Salvar</button>
+	</form>
+</div>
+{% endblock %}

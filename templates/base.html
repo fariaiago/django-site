@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				color: lime;
+				font-family: "Lucida Console", "Courier New", monospace;
+				font-size: 20px;
+			}
+
+			input {
+				width: 20%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: 1px solid lime;
+				outline: none;
+				background-color: black;
+				color: lime;
+				font-size: 20px;
+			}
+
+			input:focus {
+				border: 1px solid white;
+			}
+
+			input[type="file"] {
+				display: none;
+			}
+			
+			.input-file {
+				border: 1px solid lime;
+				display: inline-block;
+				padding: 6px 12px;
+				cursor: pointer;
+			}
+
+			select {
+				width: 20%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: 1px solid lime;
+				outline: none;
+				background-color: black;
+				color: lime;
+				font-size: 20px;
+			}
+
+			select:focus {
+				border: 1px solid white;
+			}
+
+			button {
+				width: 20%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: 1px solid lime;
+				outline: none;
+				background-color: black;
+				color: lime;
+				font-size: 20px;
+			}
+
+			button:focus {
+				border: 1px solid white;
+			}
+		</style>
+	<head>
+	<body>
+		<header>
+			<a href="/">Listar</a>
+			<a href="/veiculo/novo/">Cadastrar</a>
+			<a href="/veiculo/anuncio/">Anúncio</a>
+		</header>
+		{% block content %}
+		{% endblock %}
+	<body>
+</html>
