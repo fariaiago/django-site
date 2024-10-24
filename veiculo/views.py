@@ -6,6 +6,10 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import FileResponse, Http404
 from django.urls import reverse_lazy
 from veiculo.forms import FormularioVeiculo
+from veiculo.serializers import SerializadorVeiculos
+from rest_framework.generics import ListAPIView
+from rest_framework import permissions
+from rest_framework.authentication import TokenAuthentication
 
 class ListarVeiculos(LoginRequiredMixin, ListView):
 	model = Veiculo
@@ -38,3 +42,12 @@ class FotoVeiculo(View):
 			raise Http404
 		except Exception as exception:
 			raise exception
+
+class APIListarVeiculos(ListAPIView):
+
+	serializer_class = SerializadorVeiculos
+	authentication_classes = [TokenAuthentication]
+	permission_classes = [permissions.IsAuthenticated]
+
+	def get_queryset(self):
+		return Veiculo.objects.all()
